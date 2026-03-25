@@ -13,7 +13,7 @@
   --primary: #1A254F; /* navy blue */
 }
 
-/* ------------------- BODY ------------------- */
+/* BODY */
 body {
   font-family: 'Courier Prime', monospace;
   margin: 0;
@@ -23,7 +23,7 @@ body {
   background-color: var(--primary);
 }
 
-/* ------------------- HEADER ------------------- */
+/* HEADER */
 header {
   text-align: center;
   padding: 80px 20px 50px;
@@ -37,7 +37,7 @@ header h1 {
   color: #ffffff;
 }
 
-/* ------------------- NAV ------------------- */
+/* NAVIGATION */
 nav {
   text-align: center;
   border-top: 1px solid #ffffff;
@@ -59,7 +59,7 @@ nav button.active {
   text-decoration: underline;
 }
 
-/* ------------------- SECTIONS ------------------- */
+/* SECTIONS */
 section {
   display: none;
   padding: 80px 0;
@@ -70,7 +70,7 @@ section.active {
   display: block;
 }
 
-/* ------------------- CONTENT CARD ------------------- */
+/* CONTENT CARD */
 .content-frame {
   background-color: #ffffff; /* white card */
   color: var(--primary);
@@ -83,7 +83,7 @@ section.active {
   text-align: center;
 }
 
-/* ------------------- SECTION HEADINGS ------------------- */
+/* SECTION HEADINGS */
 h2 {
   text-align: center;
   margin-bottom: 30px;
@@ -92,7 +92,7 @@ h2 {
   color: var(--primary);
 }
 
-/* ------------------- VISIONS / MUSIC ------------------- */
+/* VISIONS / MUSIC */
 .vision, .music {
   margin-bottom: 40px;
 }
@@ -109,11 +109,11 @@ p {
   color: var(--primary);
 }
 
-/* ------------------- ABOUT SECTION ------------------- */
+/* ABOUT SECTION */
 #about img {
   width: 150px;
-  height: 150px;
-  border-radius: 0%;
+  height: auto;
+  border-radius: 0;
   border: 3px solid var(--primary);
   margin-bottom: 20px;
 }
@@ -122,6 +122,18 @@ p {
   font-size: 1em;
   margin-bottom: 20px;
   line-height: 1.5;
+}
+
+/* Divider line between text and social links */
+.divider {
+  border: none;
+  height: 2px;
+  background-color: var(--primary);
+  margin: 20px 0;
+}
+
+.social-links {
+  margin-top: 10px;
 }
 
 .social-links a {
@@ -136,7 +148,7 @@ p {
   color: #000000;
 }
 
-/* ------------------- FOOTER ------------------- */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 40px 10px;
@@ -196,7 +208,8 @@ footer {
   <div class="content-frame">
     <h2>ABOUT</h2>
     <img src="images/profile.jpg" alt="Armin Ards">
-    <p>I need to think still hmm </p>
+    <p>I need to think still hmm</p>
+    <hr class="divider">
     <div class="social-links">
       <a href="https://x.com/arminards" target="_blank">X</a>
       <a href="https://www.instagram.com/arminards" target="_blank">INSTAGRAM</a>
