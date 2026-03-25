@@ -17,10 +17,10 @@
 body {
   font-family: 'Courier Prime', monospace;
   margin: 0;
-  background: #ffffff;
-  color: var(--primary);
+  color: #ffffff; /* default text white on navy */
   text-transform: uppercase;
   line-height: 1.6;
+  background-color: var(--primary);
 }
 
 /* ------------------- HEADER ------------------- */
@@ -37,11 +37,11 @@ header h1 {
   color: #ffffff;
 }
 
-/* ------------------- NAVIGATION ------------------- */
+/* ------------------- NAV ------------------- */
 nav {
   text-align: center;
-  border-top: 1px solid var(--primary);
-  border-bottom: 1px solid var(--primary);
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 nav button {
@@ -52,7 +52,7 @@ nav button {
   cursor: pointer;
   font-family: inherit;
   letter-spacing: 3px;
-  color: var(--primary);
+  color: #ffffff;
 }
 
 nav button.active {
@@ -62,21 +62,23 @@ nav button.active {
 /* ------------------- SECTIONS ------------------- */
 section {
   display: none;
-  margin: 70px 0;
+  padding: 80px 0;
+  background-color: var(--primary); /* navy for all sections */
 }
 
 section.active {
   display: block;
 }
 
-/* ------------------- FRAME FOR CONTENT ------------------- */
+/* ------------------- CONTENT CARD ------------------- */
 .content-frame {
-  background-color: #ffffff;
+  background-color: #ffffff; /* white card */
+  color: var(--primary);
   border: 4px solid var(--primary);
-  border-radius: 12px;
-  padding: 30px 20px;
-  margin: 0 auto 50px auto;
   max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
@@ -86,6 +88,7 @@ h2 {
   margin-bottom: 50px;
   letter-spacing: 4px;
   font-size: 1.4em;
+  color: var(--primary);
 }
 
 /* ------------------- VISIONS / MUSIC ------------------- */
@@ -102,6 +105,7 @@ h2 {
 p {
   font-size: 0.9em;
   letter-spacing: 1px;
+  color: var(--primary);
 }
 
 /* ------------------- FORM ------------------- */
@@ -130,21 +134,14 @@ button:hover {
 
 /* ------------------- CONTACT SECTION ------------------- */
 #contact {
-  background-color: var(--primary); /* full navy background */
+  background-color: var(--primary); /* navy background */
   color: #ffffff;
-  padding: 80px 0; /* padding so the navy shows around the card */
 }
 
 /* Card inside contact */
 #contact .content-frame {
-  background-color: #ffffff; /* white card */
+  background-color: #ffffff;
   color: var(--primary);
-  border: 4px solid var(--primary);
-  max-width: 600px; /* smaller than section so navy shows */
-  margin: 0 auto;
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* Form inputs inside contact card */
@@ -180,19 +177,19 @@ footer {
 
 <body>
 
-<!-- =================== TOP HEADER =================== -->
+<!-- HEADER -->
 <header>
   <h1> • ARMIN ARDS • </h1>
 </header>
 
-<!-- =================== NAVIGATION / TABS =================== -->
+<!-- NAVIGATION -->
 <nav>
   <button class="tab-btn active" data-tab="visions">VISIONS</button>
   <button class="tab-btn" data-tab="music">MUSIC</button>
   <button class="tab-btn" data-tab="contact">CONTACT</button>
 </nav>
 
-<!-- =================== VISIONS SECTION =================== -->
+<!-- VISIONS SECTION -->
 <section id="visions" class="active">
   <div class="content-frame">
     <h2>VISIONS</h2>
@@ -209,7 +206,7 @@ footer {
   </div>
 </section>
 
-<!-- =================== MUSIC SECTION =================== -->
+<!-- MUSIC SECTION -->
 <section id="music">
   <div class="content-frame">
     <h2>MUSIC</h2>
@@ -220,7 +217,7 @@ footer {
   </div>
 </section>
 
-<!-- =================== CONTACT SECTION =================== -->
+<!-- CONTACT SECTION -->
 <section id="contact">
   <div class="content-frame">
     <h2>CONTACT</h2>
@@ -233,12 +230,12 @@ footer {
   </div>
 </section>
 
-<!-- =================== FOOTER =================== -->
+<!-- FOOTER -->
 <footer>
   © 2026 ARMIN ARDS
 </footer>
 
-<!-- =================== TAB SCRIPT =================== -->
+<!-- TAB SCRIPT -->
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('section');
