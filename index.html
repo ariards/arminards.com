@@ -37,7 +37,7 @@ header h1 {
   color: #ffffff;
 }
 
-/* ------------------- NAV ------------------- */
+/* ------------------- NAVIGATION ------------------- */
 nav {
   text-align: center;
   border-top: 1px solid var(--primary);
@@ -132,15 +132,22 @@ button:hover {
 #contact {
   background-color: var(--primary); /* full navy background */
   color: #ffffff;
+  padding: 80px 0; /* padding so the navy shows around the card */
 }
 
-/* Frame inside contact */
+/* Card inside contact */
 #contact .content-frame {
-  background-color: #ffffff;       /* only the card is white */
+  background-color: #ffffff; /* white card */
   color: var(--primary);
+  border: 4px solid var(--primary);
+  max-width: 600px; /* smaller than section so navy shows */
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Form inputs inside the white card */
+/* Form inputs inside contact card */
 #contact input,
 #contact textarea {
   border: 1px solid var(--primary);
@@ -185,7 +192,7 @@ footer {
   <button class="tab-btn" data-tab="contact">CONTACT</button>
 </nav>
 
-<!-- =================== MIDDLE SECTION: VISIONS =================== -->
+<!-- =================== VISIONS SECTION =================== -->
 <section id="visions" class="active">
   <div class="content-frame">
     <h2>VISIONS</h2>
@@ -202,7 +209,7 @@ footer {
   </div>
 </section>
 
-<!-- =================== MIDDLE SECTION: MUSIC =================== -->
+<!-- =================== MUSIC SECTION =================== -->
 <section id="music">
   <div class="content-frame">
     <h2>MUSIC</h2>
@@ -213,7 +220,7 @@ footer {
   </div>
 </section>
 
-<!-- =================== BOTTOM SECTION: CONTACT =================== -->
+<!-- =================== CONTACT SECTION =================== -->
 <section id="contact">
   <div class="content-frame">
     <h2>CONTACT</h2>
@@ -231,7 +238,7 @@ footer {
   © 2026 ARMIN ARDS
 </footer>
 
-<!-- =================== TAB SWITCHING SCRIPT =================== -->
+<!-- =================== TAB SCRIPT =================== -->
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('section');
