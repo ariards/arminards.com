@@ -119,12 +119,7 @@ p {
   padding: 20px;
   margin-bottom: 20px;
   text-align: left;
-  cursor: pointer;
   background-color: #fdfdfd;
-}
-
-.blog-post:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .blog-post .date {
@@ -143,15 +138,23 @@ p {
 .blog-post .snippet {
   font-size: 0.9em;
   color: var(--primary);
+  margin-bottom: 10px;
 }
 
-.blog-full {
-  display: none;
-  margin-top: 20px;
-  border-top: 1px solid var(--primary);
-  padding-top: 15px;
-  font-size: 0.9em;
-  line-height: 1.5;
+.read-more {
+  display: inline-block;
+  padding: 8px 15px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.read-more:hover {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 /* ------------------- ABOUT SECTION ------------------- */
@@ -231,17 +234,19 @@ footer {
       <div class="blog-post">
         <div class="date">March 20th 2026</div>
         <div class="title">Nowrouz Pirouzc</div>
-        <div class="blog-full">Full story content here.e...</div>
+        <div class="snippet">A short snippet of the story goes here...</div>
+        <a href="blog/nowrouz-pirouzc.html" class="read-more" target="_blank">Read More</a>
       </div>
 
       <!-- Example Post 2 -->
       <div class="blog-post">
-        <div class="date">March 24 2026</div>
+        <div class="date">March 24th 2026</div>
         <div class="title">Dark Music Inspirations</div>
-        <div class="blog-full">Full story content here. The rhythm of the drums echoed in my mind and shaped the shadows of my new sketches...</div>
+        <div class="snippet">The rhythm of the drums echoed in my mind and shaped the shadows...</div>
+        <a href="blog/dark-music.html" class="read-more" target="_blank">Read More</a>
       </div>
 
-      <!-- You can duplicate this block for more posts -->
+      <!-- Duplicate this block for more posts -->
     </div>
   </div>
 </section>
@@ -291,15 +296,6 @@ tabs.forEach(btn => {
     sections.forEach(sec => {
       sec.classList.toggle('active', sec.id === tab);
     });
-  });
-});
-
-// Blog post "Read More" toggle
-const blogPosts = document.querySelectorAll('.blog-post');
-blogPosts.forEach(post => {
-  post.addEventListener('click', () => {
-    const full = post.querySelector('.blog-full');
-    full.style.display = (full.style.display === 'block') ? 'none' : 'block';
   });
 });
 </script>
