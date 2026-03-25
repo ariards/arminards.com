@@ -21,7 +21,7 @@ body {
   color: var(--white);
   text-transform: uppercase;
   line-height: 1.6;
-  background-color: var(--primary); /* entire page background navy */
+  background-color: var(--primary);
 }
 
 /* ------------------- HEADER ------------------- */
@@ -35,13 +35,13 @@ header h1 {
   font-size: 3em;
   letter-spacing: 6px;
   margin: 0;
-  color: var(--white); /* name in white */
+  color: var(--white);
 }
 
 /* ------------------- NAVIGATION ------------------- */
 nav {
   text-align: center;
-  background-color: var(--white); /* nav strip white */
+  background-color: var(--white);
   border-top: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
 }
@@ -54,7 +54,7 @@ nav button {
   cursor: pointer;
   font-family: inherit;
   letter-spacing: 3px;
-  color: var(--primary); /* nav buttons blue */
+  color: var(--primary);
 }
 
 nav button.active {
@@ -65,7 +65,7 @@ nav button.active {
 section {
   display: none;
   padding: 80px 0;
-  background-color: var(--primary); /* keep navy for sections */
+  background-color: var(--primary);
   color: var(--white);
 }
 
@@ -75,11 +75,11 @@ section.active {
 
 /* ------------------- CONTENT CARD ------------------- */
 .content-frame {
-  background-color: #ffffff; /* white content inside sections */
+  background-color: var(--white);
   color: var(--primary);
   border: 4px solid var(--primary);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
@@ -110,6 +110,48 @@ p {
   font-size: 0.9em;
   letter-spacing: 1px;
   color: var(--primary);
+}
+
+/* ------------------- BLOG LIST ------------------- */
+.blog-post {
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  cursor: pointer;
+  background-color: #fdfdfd;
+}
+
+.blog-post:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.blog-post .date {
+  font-size: 0.8em;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.blog-post .title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.blog-post .snippet {
+  font-size: 0.9em;
+  color: var(--primary);
+}
+
+.blog-full {
+  display: none;
+  margin-top: 20px;
+  border-top: 1px solid var(--primary);
+  padding-top: 15px;
+  font-size: 0.9em;
+  line-height: 1.5;
 }
 
 /* ------------------- ABOUT SECTION ------------------- */
@@ -180,16 +222,28 @@ footer {
 <!-- VISIONS SECTION -->
 <section id="visions" class="active">
   <div class="content-frame">
-    <h2>I will start writing soon...</h2>
-    <div class="visions">
-      <div class="vision">
-        <img src="images/vision1.jpg" alt="Vision 1">
-        <p>A DARK AND MOODY VISION</p>
+    <h2>VISIONS</h2>
+    <p>Welcome to my visions. Below are my latest thoughts, stories, and creations:</p>
+
+    <!-- Blog List -->
+    <div class="blog-list">
+      <!-- Example Post 1 -->
+      <div class="blog-post">
+        <div class="date">March 25, 2026</div>
+        <div class="title">A Chilly Night in the Arctic</div>
+        <div class="snippet">I wandered through the frozen landscapes under the northern lights...</div>
+        <div class="blog-full">Full story content here. I saw a pack of wolves moving silently across the ice, and the sky shimmered green above me...</div>
       </div>
-      <div class="vision">
-        <img src="images/vision2.jpg" alt="Vision 2">
-        <p>ANOTHER EERIE MOMENT</p>
+
+      <!-- Example Post 2 -->
+      <div class="blog-post">
+        <div class="date">March 24, 2026</div>
+        <div class="title">Dark Music Inspirations</div>
+        <div class="snippet">Today I listened to some gothic tracks that inspired my next creation...</div>
+        <div class="blog-full">Full story content here. The rhythm of the drums echoed in my mind and shaped the shadows of my new sketches...</div>
       </div>
+
+      <!-- You can duplicate this block for more posts -->
     </div>
   </div>
 </section>
@@ -229,6 +283,7 @@ footer {
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('section');
 
+// Tab navigation
 tabs.forEach(btn => {
   btn.addEventListener('click', () => {
     tabs.forEach(b => b.classList.remove('active'));
@@ -238,6 +293,15 @@ tabs.forEach(btn => {
     sections.forEach(sec => {
       sec.classList.toggle('active', sec.id === tab);
     });
+  });
+});
+
+// Blog post "Read More" toggle
+const blogPosts = document.querySelectorAll('.blog-post');
+blogPosts.forEach(post => {
+  post.addEventListener('click', () => {
+    const full = post.querySelector('.blog-full');
+    full.style.display = (full.style.display === 'block') ? 'none' : 'block';
   });
 });
 </script>
