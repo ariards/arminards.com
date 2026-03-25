@@ -3,90 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ARMIN ARDS</title>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --bg-color: #111;
-    --text-color: #eee;
-    --accent-color: #8B0000;
-    --heading-font: 'Special Elite', monospace;
-    --body-font: 'Special Elite', monospace;
+    --primary: #1C2A5A; /* dark Persian / navy blue */
   }
 
-  body { 
-    font-family: var(--body-font); 
-    margin: 0; 
-    background: var(--bg-color); 
-    color: var(--text-color); 
+  body {
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    background: #ffffff;
+    color: var(--primary);
     text-transform: uppercase;
   }
 
-  header { 
-    background: #000; 
-    color: #fff; 
-    text-align: center; 
-    padding: 80px 20px; 
-    text-shadow: 2px 2px 6px #800000; 
-  }
-  header h1 { font-family: var(--heading-font); font-size: 4em; margin: 0; }
-  header p { font-size: 1.5em; color: #bbb; margin-top: 10px; }
-
-  nav { display: flex; justify-content: center; background: #111; border-bottom: 1px solid #333; }
-  nav button { 
-    background: #111; 
-    color: var(--text-color); 
-    border: none; 
-    padding: 15px 25px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    font-family: var(--heading-font); 
-    transition: all 0.3s; 
-    text-transform: uppercase;
-  }
-  nav button:hover { 
-    color: var(--accent-color); 
-    text-shadow: 1px 1px 4px var(--accent-color); 
-  }
-  nav button.active { 
-    color: #ff4444; 
-    text-shadow: 2px 2px 6px #ff4444; 
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
   }
 
-  section { display: none; padding: 60px 20px; max-width: 1000px; margin: auto; }
-  section.active { display: block; }
-
-  h2 { 
-    text-align: center; 
-    font-family: var(--heading-font); 
-    font-size: 2.5em; 
-    margin-bottom: 40px; 
-    color: #fff; 
-    text-shadow: 1px 1px 4px #5A0A5A; 
+  header h1 {
+    font-size: 3em;
+    letter-spacing: 4px;
+    margin: 0;
   }
 
-  .visions, .music { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-  .vision, .track { 
-    background: #222; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.7); 
+  nav {
+    text-align: center;
+    border-top: 1px solid var(--primary);
+    border-bottom: 1px solid var(--primary);
   }
-  .vision img { width: 100%; border-radius: 5px; border: 1px solid #444; }
 
-  form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
-  input, textarea, button.submit { padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #333; background: #222; color: var(--text-color); font-family: var(--body-font); text-transform: uppercase; }
-  button.submit { background: var(--accent-color); color: #fff; cursor: pointer; transition: all 0.3s; }
-  button.submit:hover { background: #ff0000; box-shadow: 0 0 8px #ff4444; }
+  nav button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 2px;
+    color: var(--primary);
+  }
 
-  footer { text-align: center; padding: 20px; background: #000; color: #aaa; margin-top: 40px; font-size: 0.9em; }
+  nav button.active {
+    text-decoration: underline;
+  }
+
+  section {
+    display: none;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+  }
+
+  .visions, .music {
+    display: grid;
+    gap: 20px;
+  }
+
+  .vision img {
+    width: 100%;
+    border: 1px solid var(--primary);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  input, textarea, button {
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    background: none;
+    color: var(--primary);
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: var(--primary);
+    color: #ffffff;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 10px;
+    border-top: 1px solid var(--primary);
+    font-size: 0.9em;
+  }
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>ARMIN ARDS</h1>
-  <p>VISIONS, MUSIC & CONTACT</p>
 </header>
 
 <nav>
@@ -99,12 +130,12 @@
   <h2>VISIONS</h2>
   <div class="visions">
     <div class="vision">
-      <img src="images/vision1.jpg" alt="Vision 1">
-      <p>A DARK AND MOODY VISION.</p>
+      <img src="images/vision1.jpg">
+      <p>A DARK AND MOODY VISION</p>
     </div>
     <div class="vision">
-      <img src="images/vision2.jpg" alt="Vision 2">
-      <p>ANOTHER EERIE MOMENT CAPTURED.</p>
+      <img src="images/vision2.jpg">
+      <p>ANOTHER EERIE MOMENT</p>
     </div>
   </div>
 </section>
@@ -112,25 +143,23 @@
 <section id="music">
   <h2>MUSIC</h2>
   <div class="music">
-    <div class="track">
-      <iframe src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      <p>GOTHIC TRACK DESCRIPTION</p>
-    </div>
+    <iframe src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="80"></iframe>
+    <p>TRACK DESCRIPTION</p>
   </div>
 </section>
 
 <section id="contact">
   <h2>CONTACT</h2>
-  <form action="mailto:your@email.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="YOUR NAME" required>
-    <input type="email" name="email" placeholder="YOUR EMAIL" required>
-    <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required></textarea>
-    <button class="submit" type="submit">SEND</button>
+  <form>
+    <input type="text" placeholder="YOUR NAME" required>
+    <input type="email" placeholder="YOUR EMAIL" required>
+    <textarea rows="5" placeholder="YOUR MESSAGE" required></textarea>
+    <button type="submit">SEND</button>
   </form>
 </section>
 
 <footer>
-  &copy; 2026 ARMIN ARDS
+  © 2026 ARMIN ARDS
 </footer>
 
 <script>
@@ -141,8 +170,11 @@ tabs.forEach(btn => {
   btn.addEventListener('click', () => {
     tabs.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
     const tab = btn.dataset.tab;
-    sections.forEach(sec => sec.id === tab ? sec.classList.add('active') : sec.classList.remove('active'));
+    sections.forEach(sec => {
+      sec.classList.toggle('active', sec.id === tab);
+    });
   });
 });
 </script>
