@@ -6,44 +6,44 @@
 
 <title> • ARMIN ARDS • </title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --primary: #1A254F; /* navy blue used for frames, borders, and text */
+  --primary: #1A254F; /* navy blue */
+  --white: #ffffff;
 }
 
 /* ------------------- BODY ------------------- */
 body {
-  font-family: 'Courier Prime', monospace; /* typewriter style font */
+  font-family: 'Courier Prime', monospace;
   margin: 0;
-  color: #ffffff; /* default text color outside sections */
-  text-transform: uppercase; /* all letters uppercase */
+  color: var(--white);
+  text-transform: uppercase;
   line-height: 1.6;
-  background-color: var(--primary); /* navy blue page background */
+  background-color: var(--primary); /* entire page background navy */
 }
 
 /* ------------------- HEADER ------------------- */
 header {
   text-align: center;
   padding: 80px 20px 50px;
-  background-color: var(--primary); /* navy blue behind your name */
+  background-color: var(--primary);
 }
 
 header h1 {
   font-size: 3em;
   letter-spacing: 6px;
   margin: 0;
-  color: #ffffff; /* your name in white */
+  color: var(--white); /* name in white */
 }
 
 /* ------------------- NAVIGATION ------------------- */
 nav {
   text-align: center;
+  background-color: var(--white); /* nav strip white */
   border-top: 1px solid var(--primary);
   border-bottom: 1px solid var(--primary);
-  background-color: #ffffff; /* nav buttons on white background */
 }
 
 nav button {
@@ -54,19 +54,19 @@ nav button {
   cursor: pointer;
   font-family: inherit;
   letter-spacing: 3px;
-  color: var(--primary); /* nav text in navy blue */
+  color: var(--primary); /* nav buttons blue */
 }
 
 nav button.active {
-  text-decoration: underline; /* active tab underline */
+  text-decoration: underline;
 }
 
 /* ------------------- SECTIONS ------------------- */
 section {
-  display: none; /* hidden by default, shown when active */
+  display: none;
   padding: 80px 0;
-  background-color: #ffffff; /* white background for content sections */
-  color: var(--primary); /* text in navy blue */
+  background-color: var(--primary); /* keep navy for sections */
+  color: var(--white);
 }
 
 section.active {
@@ -75,9 +75,9 @@ section.active {
 
 /* ------------------- CONTENT CARD ------------------- */
 .content-frame {
-  background-color: #ffffff; /* white content box */
-  color: var(--primary);     /* text inside box is navy blue */
-  border: 4px solid var(--primary); /* blue frame around content */
+  background-color: #ffffff; /* white content inside sections */
+  color: var(--primary);
+  border: 4px solid var(--primary);
   max-width: 700px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -92,7 +92,7 @@ h2 {
   margin-bottom: 30px;
   letter-spacing: 4px;
   font-size: 1.4em;
-  color: var(--primary); /* headings in blue */
+  color: var(--primary);
 }
 
 /* ------------------- VISIONS / MUSIC CONTENT ------------------- */
@@ -109,15 +109,15 @@ h2 {
 p {
   font-size: 0.9em;
   letter-spacing: 1px;
-  color: var(--primary); /* text inside content */
+  color: var(--primary);
 }
 
 /* ------------------- ABOUT SECTION ------------------- */
 #about img {
   width: 150px;
-  height: auto; /* keeps original proportions */
-  border-radius: 0; /* rectangular photo */
-  border: 3px solid var(--primary); /* frame around photo */
+  height: auto;
+  border-radius: 0;
+  border: 3px solid var(--primary);
   margin-bottom: 20px;
 }
 
@@ -127,15 +127,13 @@ p {
   line-height: 1.5;
 }
 
-/* Divider line between text and social links */
 .divider {
   border: none;
   height: 2px;
   background-color: var(--primary);
-  margin: 20px 0; /* space above and below line */
+  margin: 20px 0;
 }
 
-/* Social links */
 .social-links {
   margin-top: 10px;
 }
@@ -160,26 +158,26 @@ footer {
   font-size: 0.8em;
   letter-spacing: 2px;
   background-color: var(--primary);
-  color: #ffffff;
+  color: var(--white);
 }
 </style>
 </head>
 
 <body>
 
-<!-- ------------------- HEADER ------------------- -->
+<!-- HEADER -->
 <header>
   <h1> • ARMIN ARDS • </h1>
 </header>
 
-<!-- ------------------- NAVIGATION ------------------- -->
+<!-- NAVIGATION -->
 <nav>
   <button class="tab-btn active" data-tab="visions">VISIONS</button>
   <button class="tab-btn" data-tab="music">MUSIC</button>
   <button class="tab-btn" data-tab="about">ABOUT</button>
 </nav>
 
-<!-- ------------------- VISIONS SECTION ------------------- -->
+<!-- VISIONS SECTION -->
 <section id="visions" class="active">
   <div class="content-frame">
     <h2>I will start writing soon...</h2>
@@ -196,7 +194,7 @@ footer {
   </div>
 </section>
 
-<!-- ------------------- MUSIC SECTION ------------------- -->
+<!-- MUSIC SECTION -->
 <section id="music">
   <div class="content-frame">
     <h2>MUSIC</h2>
@@ -207,17 +205,13 @@ footer {
   </div>
 </section>
 
-<!-- ------------------- ABOUT SECTION ------------------- -->
+<!-- ABOUT SECTION -->
 <section id="about">
   <div class="content-frame">
     <h2>ABOUT</h2>
-    <!-- Profile Picture -->
     <img src="images/profile.jpg" alt="Armin Ards">
-    <!-- Introduction text -->
     <p>I need to think still hmm</p>
-    <!-- Divider line -->
     <hr class="divider">
-    <!-- Social Links -->
     <div class="social-links">
       <a href="https://x.com/arminards" target="_blank">X</a>
       <a href="https://www.instagram.com/arminards" target="_blank">INSTAGRAM</a>
@@ -225,12 +219,12 @@ footer {
   </div>
 </section>
 
-<!-- ------------------- FOOTER ------------------- -->
+<!-- FOOTER -->
 <footer>
   © 2026 ARMIN ARDS
 </footer>
 
-<!-- ------------------- TAB SCRIPT ------------------- -->
+<!-- TAB SCRIPT -->
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('section');
