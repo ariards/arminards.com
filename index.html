@@ -6,21 +6,21 @@
 
 <title> • ARMIN ARDS • </title>
 
-<!-- Typewriter-style font -->
+<!-- Typewriter font -->
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 
 <style>
 /* ------------------- ROOT VARIABLES ------------------- */
 :root {
-  --primary: #1A254F; /* navy blue for top/bottom sections */
+  --primary: #1A254F; /* navy blue for header/footer/frame */
 }
 
 /* ------------------- BODY ------------------- */
 body {
   font-family: 'Courier Prime', monospace;
   margin: 0;
-  background: #ffffff; /* neutral background */
-  color: var(--primary); /* default text color */
+  background: #ffffff;
+  color: var(--primary);
   text-transform: uppercase;
   line-height: 1.6;
 }
@@ -29,14 +29,14 @@ body {
 header {
   text-align: center;
   padding: 80px 20px 50px;
-  background-color: var(--primary); /* navy blue */
+  background-color: var(--primary);
 }
 
 header h1 {
   font-size: 3em;
   letter-spacing: 6px;
   margin: 0;
-  color: #ffffff; /* white text */
+  color: #ffffff;
 }
 
 /* ------------------- NAVIGATION ------------------- */
@@ -61,18 +61,28 @@ nav button.active {
   text-decoration: underline;
 }
 
-/* ------------------- SECTIONS (GENERAL) ------------------- */
+/* ------------------- SECTIONS ------------------- */
 section {
   display: none;
-  padding: 70px 20px;
-  max-width: 700px;
-  margin: auto;
+  margin: 70px 0; /* space around frames */
 }
 
 section.active {
   display: block;
 }
 
+/* ------------------- FRAME FOR CONTENT ------------------- */
+.content-frame {
+  background-color: #ffffff;
+  border: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 30px 20px;
+  margin: 0 auto 50px auto;
+  max-width: 700px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ------------------- SECTION HEADINGS ------------------- */
 h2 {
   text-align: center;
   margin-bottom: 50px;
@@ -80,12 +90,7 @@ h2 {
   font-size: 1.4em;
 }
 
-/* ------------------- MIDDLE SECTIONS (VISIONS / MUSIC) ------------------- */
-#visions, #music {
-  background-color: #ffffff; /* neutral white */
-  color: var(--primary);     /* navy text */
-}
-
+/* ------------------- VISIONS / MUSIC CONTENT ------------------- */
 .vision, .music {
   margin-bottom: 40px;
 }
@@ -101,36 +106,50 @@ p {
   letter-spacing: 1px;
 }
 
-/* ------------------- CONTACT SECTION (BOTTOM) ------------------- */
-#contact {
-  background-color: var(--primary); /* navy blue */
-  color: #ffffff;                    /* white text */
-}
-
-#contact input,
-#contact textarea {
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  background: none;
-}
-
-#contact button {
-  background-color: #ffffff;
-  color: var(--primary);
-}
-
-#contact button:hover {
-  background-color: #ffffff;
-  color: var(--primary);
-}
-
 /* ------------------- FORM ------------------- */
 form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 400px;
-  margin: auto;
+}
+
+input, textarea, button {
+  font-family: inherit;
+  padding: 12px;
+  border: 1px solid var(--primary);
+  background: none;
+  color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* ------------------- CONTACT SECTION ------------------- */
+#contact {
+  color: #ffffff;
+}
+
+#contact input,
+#contact textarea {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: none;
+}
+
+#contact button {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+#contact button:hover {
+  background-color: #ffffff;
+  color: var(--primary);
 }
 
 /* ------------------- FOOTER ------------------- */
@@ -140,8 +159,8 @@ footer {
   border-top: 1px solid #ffffff;
   font-size: 0.8em;
   letter-spacing: 2px;
-  background-color: var(--primary); /* navy footer */
-  color: #ffffff;                    /* white text */
+  background-color: var(--primary);
+  color: #ffffff;
 }
 </style>
 </head>
@@ -162,37 +181,43 @@ footer {
 
 <!-- =================== MIDDLE SECTION: VISIONS =================== -->
 <section id="visions" class="active">
-  <h2>VISIONS</h2>
-  <div class="visions">
-    <div class="vision">
-      <img src="images/vision1.jpg" alt="Vision 1">
-      <p>A DARK AND MOODY VISION</p>
-    </div>
-    <div class="vision">
-      <img src="images/vision2.jpg" alt="Vision 2">
-      <p>ANOTHER EERIE MOMENT</p>
+  <div class="content-frame">
+    <h2>VISIONS</h2>
+    <div class="visions">
+      <div class="vision">
+        <img src="images/vision1.jpg" alt="Vision 1">
+        <p>A DARK AND MOODY VISION</p>
+      </div>
+      <div class="vision">
+        <img src="images/vision2.jpg" alt="Vision 2">
+        <p>ANOTHER EERIE MOMENT</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- =================== MIDDLE SECTION: MUSIC =================== -->
 <section id="music">
-  <h2>MUSIC</h2>
-  <div class="music">
-    <iframe src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="80"></iframe>
-    <p>TRACK DESCRIPTION</p>
+  <div class="content-frame">
+    <h2>MUSIC</h2>
+    <div class="music">
+      <iframe src="https://open.spotify.com/embed/track/YOUR_TRACK_ID" width="100%" height="80"></iframe>
+      <p>TRACK DESCRIPTION</p>
+    </div>
   </div>
 </section>
 
 <!-- =================== BOTTOM SECTION: CONTACT =================== -->
 <section id="contact">
-  <h2>CONTACT</h2>
-  <form>
-    <input type="text" placeholder="YOUR NAME" required>
-    <input type="email" placeholder="YOUR EMAIL" required>
-    <textarea rows="5" placeholder="YOUR MESSAGE" required></textarea>
-    <button type="submit">SEND</button>
-  </form>
+  <div class="content-frame">
+    <h2>CONTACT</h2>
+    <form>
+      <input type="text" placeholder="YOUR NAME" required>
+      <input type="email" placeholder="YOUR EMAIL" required>
+      <textarea rows="5" placeholder="YOUR MESSAGE" required></textarea>
+      <button type="submit">SEND</button>
+    </form>
+  </div>
 </section>
 
 <!-- =================== FOOTER =================== -->
