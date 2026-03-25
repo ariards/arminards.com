@@ -6,13 +6,11 @@
 
 <title> • ARMIN ARDS • </title>
 
-<!-- Typewriter font -->
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
 
 <style>
-/* ------------------- ROOT VARIABLES ------------------- */
 :root {
-  --primary: #1A254F; /* navy blue for header/footer/frame */
+  --primary: #1A254F; /* navy blue */
 }
 
 /* ------------------- BODY ------------------- */
@@ -25,7 +23,7 @@ body {
   line-height: 1.6;
 }
 
-/* ------------------- TOP HEADER ------------------- */
+/* ------------------- HEADER ------------------- */
 header {
   text-align: center;
   padding: 80px 20px 50px;
@@ -39,7 +37,7 @@ header h1 {
   color: #ffffff;
 }
 
-/* ------------------- NAVIGATION ------------------- */
+/* ------------------- NAV ------------------- */
 nav {
   text-align: center;
   border-top: 1px solid var(--primary);
@@ -64,7 +62,7 @@ nav button.active {
 /* ------------------- SECTIONS ------------------- */
 section {
   display: none;
-  margin: 70px 0; /* space around frames */
+  margin: 70px 0;
 }
 
 section.active {
@@ -90,7 +88,7 @@ h2 {
   font-size: 1.4em;
 }
 
-/* ------------------- VISIONS / MUSIC CONTENT ------------------- */
+/* ------------------- VISIONS / MUSIC ------------------- */
 .vision, .music {
   margin-bottom: 40px;
 }
@@ -132,9 +130,17 @@ button:hover {
 
 /* ------------------- CONTACT SECTION ------------------- */
 #contact {
+  background-color: var(--primary); /* full navy background */
   color: #ffffff;
 }
 
+/* Frame inside contact */
+#contact .content-frame {
+  background-color: #ffffff;       /* only the card is white */
+  color: var(--primary);
+}
+
+/* Form inputs inside the white card */
 #contact input,
 #contact textarea {
   border: 1px solid var(--primary);
