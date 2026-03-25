@@ -17,7 +17,7 @@
 body {
   font-family: 'Courier Prime', monospace;
   margin: 0;
-  color: #ffffff; /* default text white on navy */
+  color: #ffffff;
   text-transform: uppercase;
   line-height: 1.6;
   background-color: var(--primary);
@@ -63,7 +63,7 @@ nav button.active {
 section {
   display: none;
   padding: 80px 0;
-  background-color: var(--primary); /* navy for all sections */
+  background-color: var(--primary);
 }
 
 section.active {
@@ -80,12 +80,13 @@ section.active {
   padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 /* ------------------- SECTION HEADINGS ------------------- */
 h2 {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   letter-spacing: 4px;
   font-size: 1.4em;
   color: var(--primary);
@@ -108,58 +109,31 @@ p {
   color: var(--primary);
 }
 
-/* ------------------- FORM ------------------- */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* ------------------- ABOUT SECTION ------------------- */
+#about img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  margin-bottom: 20px;
 }
 
-input, textarea, button {
-  font-family: inherit;
-  padding: 12px;
-  border: 1px solid var(--primary);
-  background: none;
+#about p {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
   color: var(--primary);
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  background: var(--primary);
-  color: #ffffff;
-}
-
-/* ------------------- CONTACT SECTION ------------------- */
-#contact {
-  background-color: var(--primary); /* navy background */
-  color: #ffffff;
-}
-
-/* Card inside contact */
-#contact .content-frame {
-  background-color: #ffffff;
-  color: var(--primary);
-}
-
-/* Form inputs inside contact card */
-#contact input,
-#contact textarea {
-  border: 1px solid var(--primary);
-  color: var(--primary);
-  background: none;
-}
-
-#contact button {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
-#contact button:hover {
-  background-color: #ffffff;
-  color: var(--primary);
+.social-links a:hover {
+  color: #000000;
 }
 
 /* ------------------- FOOTER ------------------- */
@@ -186,7 +160,7 @@ footer {
 <nav>
   <button class="tab-btn active" data-tab="visions">VISIONS</button>
   <button class="tab-btn" data-tab="music">MUSIC</button>
-  <button class="tab-btn" data-tab="contact">CONTACT</button>
+  <button class="tab-btn" data-tab="about">ABOUT</button>
 </nav>
 
 <!-- VISIONS SECTION -->
@@ -217,16 +191,17 @@ footer {
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
+<!-- ABOUT SECTION -->
+<section id="about">
   <div class="content-frame">
-    <h2>CONTACT</h2>
-    <form>
-      <input type="text" placeholder="YOUR NAME" required>
-      <input type="email" placeholder="YOUR EMAIL" required>
-      <textarea rows="5" placeholder="YOUR MESSAGE" required></textarea>
-      <button type="submit">SEND</button>
-    </form>
+    <h2>ABOUT</h2>
+    <img src="images/profile.jpg" alt="Armin Ards">
+    <p>Hello! I’m ARMIN ARDS, a passionate creator exploring visions, music, and digital art. I love bringing dark, moody aesthetics to life and sharing them with the world.</p>
+    <div class="social-links">
+      <a href="https://twitter.com" target="_blank">TWITTER</a>
+      <a href="https://instagram.com" target="_blank">INSTAGRAM</a>
+      <a href="https://linkedin.com" target="_blank">LINKEDIN</a>
+    </div>
   </div>
 </section>
 
