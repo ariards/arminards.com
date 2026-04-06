@@ -368,7 +368,7 @@ section.active {
 /* Rectangle artwork - 16:9 aspect ratio */
 .track-artwork {
   width: 100px;
-  height: 56px;
+  aspect-ratio: 1 / 1
   flex-shrink: 0;
   object-fit: cover;
   background: var(--cream-faint);
@@ -377,14 +377,14 @@ section.active {
 @media (min-width: 480px) {
   .track-artwork {
     width: 140px;
-    height: 79px;
+    
   }
 }
 
 @media (min-width: 768px) {
   .track-artwork {
     width: 180px;
-    height: 101px;
+    
   }
 }
 
