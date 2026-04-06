@@ -1224,33 +1224,83 @@ Here’s to the hope that anyone who comes across this online lighthouse with fl
         2. Create a new form
         3. Replace YOUR_FORMSPREE_ID below with your form ID
       -->
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvwajny" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label"></label>
-            <input type="text" name="name" required class="form-input" placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label class="form-label"></label>
-            <input type="email" name="email" required class="form-input" placeholder="Your email">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label"></label>
-          <textarea name="message" class="form-textarea" placeholder="Your message"></textarea>
-        </div>
-        <label class="checkbox-label">
-          <input type="checkbox" name="subscribe" value="yes" class="checkbox-input">
-          Subscribe to daily Thoughtwaves
-        </label>
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-      
-      <div class="success-message" id="successMessage" style="display: none;">
-        Wavelenghts Received - Blessed Be
-      </div>
+      <!-- Contact Form -->
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvwajny" method="POST">
+  <div class="form-row">
+    <div class="form-group">
+      <input type="text" name="name" required class="form-input" placeholder="Your name">
     </div>
-  </section>
+    <div class="form-group">
+      <input type="email" name="email" required class="form-input" placeholder="Your email">
+    </div>
+  </div>
+  <div class="form-group">
+    <textarea name="message" class="form-textarea" placeholder="Your message"></textarea>
+  </div>
+  <label class="checkbox-label">
+    <input type="checkbox" name="subscribe" value="yes" class="checkbox-input">
+    Subscribe to daily Thoughtwaves
+  </label>
+  <button type="submit" class="submit-btn">Send Message</button>
+
+  <!-- Success & error messages -->
+  <div class="success-message" id="successMessage" style="display: none;">
+   - Wavelengths Received 
+   <br>– Blessed Be
+  </div>
+  <div class="error-message" id="errorMessage" style="display: none;">
+    Oops! Something went wrong.
+  </div>
+</form>
+
+<!-- Lighthouse fade animation -->
+<style>
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+</style>
+
+<script>
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+const errorMessage = document.getElementById("errorMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      successMessage.style.display = "block";
+      errorMessage.style.display = "none";
+      form.reset();
+
+      // Trigger lighthouse fade animation
+      successMessage.style.animation = "none"; // reset animation
+      void successMessage.offsetWidth;          // reflow
+      successMessage.style.animation = "fadeInOut 5s ease forwards";
+
+    } else {
+      successMessage.style.display = "none";
+      errorMessage.style.display = "block";
+    }
+  } catch (error) {
+    successMessage.style.display = "none";
+    errorMessage.style.display = "block";
+    console.error(error);
+  }
+});
+</script>
 
   <!-- FOOTER -->
   <footer>
