@@ -1133,9 +1133,9 @@ footer {
       
       <!-- POST 2 -->
       <div class="vision-card">
-        <span class="vision-card-date">March 20th 2026 - Farvardin 1st 2585</span>
+        <span class="vision-card-date">March 20th 2026 - 1st Farvardin 2585</span>
         <h3 class="vision-card-title">Nowrouz Pirouz</h3>
-        <p class="vision-card-snippet">may light and truth prevail.</p>
+        <p class="vision-card-snippet">write the first part here...</p>
         <a href="#" class="vision-card-link" onclick="showBlogPost('nowrouz-pirouz'); return false;">Read More →</a>
       </div>
       
@@ -1224,78 +1224,33 @@ Here’s to the hope that anyone who comes across this online lighthouse with fl
         2. Create a new form
         3. Replace YOUR_FORMSPREE_ID below with your form ID
       -->
-      <!-- Contact Form -->
-<form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvwajny" method="POST">
-  <div class="form-row">
-    <div class="form-group">
-      <input type="text" name="name" required class="form-input" placeholder="Your name">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label"></label>
+            <input type="text" name="name" required class="form-input" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label"></label>
+            <input type="email" name="email" required class="form-input" placeholder="Your email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label"></label>
+          <textarea name="message" class="form-textarea" placeholder="Your message"></textarea>
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" name="subscribe" value="yes" class="checkbox-input">
+          Subscribe to daily Thoughtwaves
+        </label>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      
+      <div class="success-message" id="successMessage" style="display: none;">
+        Wavelenghts Received - Blessed Be
+      </div>
     </div>
-    <div class="form-group">
-      <input type="email" name="email" required class="form-input" placeholder="Your email">
-    </div>
-  </div>
-  <div class="form-group">
-    <textarea name="message" class="form-textarea" placeholder="Your message"></textarea>
-  </div>
-  <label class="checkbox-label">
-    <input type="checkbox" name="subscribe" value="yes" class="checkbox-input">
-    Subscribe to daily Thoughtwaves
-  </label>
-  <button type="submit" class="submit-btn">Send Message</button>
-
-  <div class="success-message" id="successMessage" style="display:none;">
-   - Wavelengths Received <br>– Blessed Be
-  </div>
-  <div class="error-message" id="errorMessage" style="display:none;">
-    Oops! Something went wrong.
-  </div>
-</form>
-
-<style>
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
-</style>
-
-<script>
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
-const errorMessage = document.getElementById("errorMessage");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      successMessage.style.display = "block";
-      errorMessage.style.display = "none";
-      form.reset();
-
-      successMessage.style.animation = "none";
-      void successMessage.offsetWidth; // force reflow
-      successMessage.style.animation = "fadeInOut 5s ease forwards";
-
-    } else {
-      successMessage.style.display = "none";
-      errorMessage.style.display = "block";
-    }
-  } catch (err) {
-    successMessage.style.display = "none";
-    errorMessage.style.display = "block";
-    console.error(err);
-  }
-});
-</script>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -1357,19 +1312,19 @@ May light and truth prevail.
   <button class="blog-back" onclick="hideBlogPost()">← BACK TO VISIONS</button>
   
   <div class="blog-frame">
-    <div class="blog-date">March XXth 2026</div>
-    <h1 class="blog-title">Dark Inspirations</h1>
+    <div class="blog-date">March 24th 2026</div>
+    <h1 class="blog-title">Dark Music Inspirations</h1>
     
     <div class="blog-content">
-      <p>letsseeeee.</p>
+      <p>Music has always been my gateway to the unconscious. The darker, more atmospheric compositions speak to something primal—a frequency that bypasses rational thought and communicates directly with the soul.</p>
       
-      <p>Lblim bla bloop.</p>
+      <p>Lately, I've been immersed in the works of artists who understand that silence is as important as sound. The spaces between notes, the decay of reverb into void, the tension of an unresolved chord.</p>
       
       <h3>The Elegance of Darkness</h3>
       
-      <p>123.</p>
+      <p>These sonic landscapes inform my visual work, my writing, my understanding of beauty. There's an elegance in darkness that the light can never capture—not because darkness is superior, but because it reveals what brightness obscures.</p>
       
-      <blockquote>THE DARK LORD.</blockquote>
+      <blockquote>The best art exists in the liminal spaces: between light and dark, between sound and silence, between meaning and mystery.</blockquote>
     </div>
   </div>
 </div>
